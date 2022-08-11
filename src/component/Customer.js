@@ -4,13 +4,13 @@ import customertwo from "../img/customer-2.png";
 function Customer() {
   return(
     <div className="row mt-5">
-      <div className="col-sm-6" data-aos="slide-right" data-aos-duration="1000">
+      <div className="col-sm-6">
         <div className="card mb-3">
           <div className="row g-0">
             <div className="col-md-5 col-12">
               <img
                 src={customerone}
-                alt="Champplay"
+                alt="Champ-play"
                 className="img-fluid customer-image"
               />
             </div>
@@ -26,7 +26,7 @@ function Customer() {
           </div>
         </div>
       </div>
-      <div className="col-sm-6" data-aos="slide-left" data-aos-duration="1000">
+      <div className="col-sm-6">
         <div className="card mb-3">
           <div className="row g-0">
             <div className="col-md-5 col-12">

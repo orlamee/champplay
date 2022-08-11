@@ -27,8 +27,8 @@ function Footer() {
             <div className="col-sm mb-3">
               <h3>Contact Us</h3>
               <ul className="list-unstyled links">
-                <li><a href="!#">09896896532</a></li>
-                <li><a href="!#">help@champsplay.com</a></li>
+                <li>09044000008</li>
+                <li>help@champsplay.com</li>
               </ul>
             </div>
             <div className="col-md-3 mb-3">

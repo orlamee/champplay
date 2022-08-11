@@ -110,7 +110,7 @@ td {
 
 .card-text {
   color: #131A72;
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 400;
 }
 
@@ -122,7 +122,7 @@ td {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  /* box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px; */
   border: 1px solid rgb(255 255 255);
   border-radius: 10px;
 }
@@ -168,7 +168,9 @@ td {
   margin-bottom: 13px;
   line-height: 1.5;
   display: block; 
+  font-size: 13px;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
 .footer-section .links li a {
@@ -341,4 +343,26 @@ td {
 
 .border-btn {
   border-color: #fff!important;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #851643CC;
+  background-clip: padding-box;
+  border: 1px solidrgba(0,0,0,.2);
+  border-radius: 1rem;
+  outline: 0;
+  padding: 40px;
+}
+
+.carousel-indicators {
+  bottom: -54px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #D6386D;
 }
