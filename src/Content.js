@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import swal from 'sweetalert';
+
 function Content() {
   // const url=;
   const [data, setData] = useState({
@@ -11,15 +13,22 @@ function Content() {
 
   function submit(e) {
     e.preventDefault(); 
-    Axios.post ("http://chamsplay.herokuapp.com/api/v1/waitlist", {
+    e.target.reset();
+    Axios.post ("https://chamsplay.herokuapp.com/api/v1/users", {
+      is_waitlist: true,
       fullname: data.fullname,
       email: data.email,
       phone: data.phone,
-      token: data.token
+      // token: data.token
     })
-
+    
     .then(res => {
-      console.log(res.data)
+      swal({
+        title: "Congratulations!",
+        text: "You've successfully been added to champsplay wailtlist!",
+        icon: "success",
+        button: "Ok!",
+      });
     })
   }
 
@@ -51,21 +60,21 @@ function Content() {
                   <div className="modal-body">
                     <form onSubmit={(e) => submit(e)}>
                       <div className="form-group">
-                        <label className="text-white fw-bold">Your Name</label>
-                        <input type="name" className="form-control py-2" value={data.fullname} onChange={(e) => handle(e)} id="fullname"/>
+                        <label className="text-white fw-bold">Your full name</label>
+                        <input type="name" className="form-control py-2" value={data.fullname} onChange={(e) => handle(e)} id="fullname" required/>
                       </div>
                       <div className="form-group">
-                        <label  className="text-white fw-bold">Your Email Address</label>
-                        <input type="email" className="form-control py-2" value={data.email} onChange={(e) => handle(e)} id="email"/>
+                        <label  className="text-white fw-bold">Your email address</label>
+                        <input type="email" className="form-control py-2" value={data.email} onChange={(e) => handle(e)} id="email" required/>
                       </div>
                       <div className="form-group">
                         <label className="text-white fw-bold">Phone number</label>
-                        <input type="tel" className="form-control py-2" value={data.phone} onChange={(e) => handle(e)} id="phone"/>
+                        <input type="tel" className="form-control py-2" value={data.phone} onChange={(e) => handle(e)} id="phone" required/>
                       </div>
-                      <div className="form-group">
+                      {/* <div className="form-group">
                         <label className="text-white fw-bold">Field</label>
                         <input type="number" className="form-control py-2" value={data.token} onChange={(e) => handle(e)} id="token"/>
-                      </div>
+                      </div> */}
                       <div className="mt-4">
                         <button type="submit" className="btn btn-primary btn-block px-4 py-2 bg-white text-secondary border-btn fw-bold">Submit</button>
                       </div>
