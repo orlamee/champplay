@@ -82,11 +82,18 @@ body {
 
 .table-section {
   margin-top: -64px;
-  background-color: #fff;
-  padding: 40px;
+  background-image: linear-gradient(#DF6AD3 0%, rgba(243, 70, 226, 0) 100%);
+  padding: 60px 20px 0px 20px;
   position: relative;
   border-radius: 20px;
   box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+
+.table-section h2 {
+  font-size: 60px;
+  line-height: 70px;
+  /* font-weight: 900; */
+  font-family: 'Roboto', sans-serif;
 }
 
 th {
@@ -365,4 +372,12 @@ td {
 
 .carousel-indicators [data-bs-target] {
   background-color: #D6386D;
+}
+
+.coin {
+  padding: 91px 30px;
+  background-image: url("./img/coin.png");
+  background-size: 778px 472px;
+  background-position: center;
+  background-repeat: no-repeat;
 }

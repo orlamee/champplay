@@ -43,9 +43,9 @@ function Content() {
     <section className="mx-3 mb-5">
       <div className="container">
         <div className="row justify-content-center table-section">
-          <div className="col-md-12 col-lg-12 text-center">
-            <h2 className="fw-bolder mb-3 text-secondary">Get free Champ Token by joining our waitlist</h2>
-            <button type="button" className="btn btn-primary mb-5 px-4 bg-faint text-secondary border-0 fw-bold'" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <div className="col-md-10 col-lg-10 text-center coin">
+            <h2 className="fw-bolder mb-5 text-secondary">Get free Champ Token<br/>by joining our waitlist</h2>
+            <button type="button" className="btn btn-primary mb-5 px-5 py-3 bg-faint text-secondary border-0 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Click to join the waitlist
             </button>
 
