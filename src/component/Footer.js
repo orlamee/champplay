@@ -34,7 +34,7 @@ function Footer() {
             <div className="col-md-3 mb-3">
               <h3>Socials</h3>
               <ul className="list-unstyled social">
-                <li><i className="bi bi-facebook pe-3"></i></li>
+                <li><a href="https://www.instagram.com/champsplay/" target="_blank" rel="noreferrer"><i className="bi bi-facebook pe-3"></i></a></li>
                 <li><i className="bi bi-twitter pe-3"></i></li>
                 <li><i className="bi bi-instagram"></i></li>
               </ul>
