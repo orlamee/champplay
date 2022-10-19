@@ -28,15 +28,16 @@ function Footer() {
               <h3>Contact Us</h3>
               <ul className="list-unstyled links">
                 <li>09044000008</li>
-                <li>help@champsplay.com</li>
+                <li>hello@champsplay.com</li>
               </ul>
             </div>
             <div className="col-md-3 mb-3">
               <h3>Socials</h3>
               <ul className="list-unstyled social">
                 <li><a href="https://www.instagram.com/champsplay/" target="_blank" rel="noreferrer"><i className="bi bi-facebook pe-3"></i></a></li>
-                <li><i className="bi bi-twitter pe-3"></i></li>
-                <li><i className="bi bi-instagram"></i></li>
+                <li><a href="https://twitter.com/champsplayng" target="_blank" rel="noreferrer"><i className="bi bi-twitter pe-3"></i></a></li>
+                <li><a href="https://www.facebook.com/Champsplay" target="_blank" rel="noreferrer"><i className="bi bi-facebook pe-3"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/champs-play/" target="_blank" rel="noreferrer"><i className="bi bi-linkedin pe-3"></i></a></li>
               </ul>
             </div>
           </div>
