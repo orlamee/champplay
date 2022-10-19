@@ -4,23 +4,34 @@ import swal from 'sweetalert';
 
 function Content() {
   // const url=;
+  
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState({
+    bad: [],
     fullname: "",
     email: "",
     phone: "",
-    token: ""
+    token: "",
+
   })
 
+  
+
   function submit(e) {
+    setIsLoading(true);
     e.preventDefault(); 
-    e.target.reset();
+
+//   this is another way to reset but i feel you dont need it since they cant click submit again 
+// setData();
     Axios.post ("https://chamsplay.herokuapp.com/api/v1/users", {
       is_waitlist: true,
       fullname: data.fullname,
       email: data.email,
       phone: data.phone,
       // token: data.token
+      
     })
+    
     
     .then(res => {
       swal({
@@ -28,15 +39,32 @@ function Content() {
         text: "You've successfully been added to champsplay wailtlist!",
         icon: "success",
         button: "Ok!",
+        
       });
     })
+    
+    .catch(error => {
+      swal({
+        title: "Error!",
+        text: error.response.data.error.phone?.[0]  || error.response.data.error.email?.[0],
+        icon: "success",
+        button: "Ok!",
+        
+      });
+      // console.log(error.response.data.error.phone?.[0]);
+
+    })
+    
   }
+
+      
+
 
   function handle(e){
     const newdata= {...data}
     newdata[e.target.id] =e.target.value
     setData(newdata)
-    console.log(newdata)
+    // console.log(newdata)
   }
 
   return(
@@ -69,15 +97,22 @@ function Content() {
                       </div>
                       <div className="form-group">
                         <label className="text-white fw-bold">Phone number</label>
-                        <input type="tel" className="form-control py-2" value={data.phone} onChange={(e) => handle(e)} id="phone" required/>
+                        <input type="tel" className="form-control py-2" value={data.phone} onChange={(e) => handle(e)} id="phone" pattern="{30988765678}" required/>
                       </div>
                       {/* <div className="form-group">
                         <label className="text-white fw-bold">Field</label>
                         <input type="number" className="form-control py-2" value={data.token} onChange={(e) => handle(e)} id="token"/>
                       </div> */}
-                      <div className="mt-4">
+                       {isLoading ? (
+                       <div className="mt-4">
+                       <button className="btn btn-primary btn-block px-4 py-2 bg-white text-secondary border-btn fw-bold">Submitting</button>
+                     </div>
+                        ) : (
+                    
+                        <div className="mt-4">
                         <button type="submit" className="btn btn-primary btn-block px-4 py-2 bg-white text-secondary border-btn fw-bold">Submit</button>
                       </div>
+                           )}
                     </form>
                   </div>
                   <div className="modal-footer">
